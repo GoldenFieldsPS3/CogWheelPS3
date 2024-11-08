@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS3 Homebrew & Games Installer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+            height: auto;
+        }
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .category {
+            width: 30%;
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .category h2 {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .checkbox-group label {
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+        .download-button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .download-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="" alt="" class="logo">
+    
+    <h1>CogWheel - PS3 Version</h1>
+    <p>Select the homebrew apps, jailbreaks you want to install:</p>
+
+    <div class="categories">
+        <!-- Jailbreaks Section -->
+        <div class="category">
+            <h2>Jailbreaks</h2>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="program" value="PS3HEN">PS3HEN</label>
+                <label><input type="checkbox" name="program" value="EvilNatCFW">EvilNat CFW</label>
+                <label><input type="checkbox" name="program" value="RebugCFW">Rebug CFW</label>
+				<label><input type="checkbox" name="program" value="HabibCFW">Habib's CFW</label>
+				<label><input type="checkbox" name="program" value="FerroxCFW">Ferrox CFW</label>
+            </div>
+        </div>
+
+        <!-- PS3 Homebrew Section -->
+        <div class="category">
+            <h2>PS3 Homebrew</h2>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="program" value="WebmanMOD">WebMAN MOD</label>
+                <label><input type="checkbox" name="program" value="MultiMAN">MultiMAN</label>
+                <label><input type="checkbox" name="program" value="IRISMAN">IRISMAN</label>
+                <label><input type="checkbox" name="program" value="SENEnabler">SEN Enabler (CFW ONLY!)</label>
+                <label><input type="checkbox" name="program" value="PSNPatch">PSN Patch</label>
+                <label><input type="checkbox" name="program" value="ManaGunZ">ManaGunZ</label>
+                <label><input type="checkbox" name="program" value="PS3UnlockHDD">PS3 Unlock HDD Space</label>
+                <label><input type="checkbox" name="program" value="reActPSN">reActPSN</label>
+            </div>
+        </div>
+
+        <!-- Emulators Section -->
+        <div class="category">
+            <h2>Emulators</h2>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="program" value="SNES9x">SNES9x</label>
+                <label><input type="checkbox" name="program" value="FCEUX">FCEUX</label>
+                <label><input type="checkbox" name="program" value="GenesisPlus">GenesisPlus</label>
+                <label><input type="checkbox" name="program" value="ScummVM">ScummVM</label>
+                <label><input type="checkbox" name="program" value="PPSSPP">PSP RL</label>
+                <label><input type="checkbox" name="program" value="RetroArch">RetroArch</label>
+            </div>
+        </div>
+
+        <!-- Toolboxes Section -->
+        <div class="category">
+            <h2>Toolboxes</h2>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="program" value="HabibToolbox">Habib Toolbox (4.65)</label>
+                <label><input type="checkbox" name="program" value="HANToolbox">HAN Toolbox</label>
+                <label><input type="checkbox" name="program" value="HENToolbox">HEN Toolbox</label>
+                <label><input type="checkbox" name="program" value="RebugToolbox">Rebug Toolbox</label>
+                <label><input type="checkbox" name="program" value="UltimateToolbox">Ultimate Toolbox</label>
+            </div>
+        </div>
+
+        <!-- CFW Flashers Section -->
+        <div class="category">
+            <h2>CFW Flashers</h2>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="program" value="CFWFlasherAlternate" onclick="redirectToPage('http://aldostools.github.io/flashwriter')">CFW Flasher - Alternate</label>
+                <label><input type="checkbox" name="program" value="CFWFlasherMain" onclick="redirectToPage('https://www.ps3toolset.com/bgtoolset/')">CFW Flasher - Main</label>
+            </div>
+        </div>
+
+        <!-- Free Stores Section -->
+        <div class="category">
+            <h2>Free Stores</h2>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="program" value="PKGi">PKGi</label>
+                <label><input type="checkbox" name="program" value="HENBrewStore">HENBrew Store</label>
+                <label><input type="checkbox" name="program" value="MHUFreeStore">MHUFreeStore</label>
+                <label><input type="checkbox" name="program" value="XMBPD">XMBPD</label>
+            </div>
+        </div>
+    </div>
+    <button class="download-button" onclick="downloadSelected()">Download Selected</button>
+</div>
+
+<script>
+    function redirectToPage(url) {
+        window.location.href = url;
+    }
+
+    function checkDevice() {
+        var isPS3 = /PlayStation 3/i.test(navigator.userAgent);
+
+        if (isPS3) {
+            alert("You need any type of USB Storage formatted to FAT32 to download these files. Insert it right now.");
+        } else {
+            alert("You are not on a PlayStation System! All features have been disabled.");
+        }
+    }
+
+    function downloadSelected() {
+        const selectedPrograms = [];
+        document.querySelectorAll('input[name="program"]:checked').forEach((checkbox) => {
+            selectedPrograms.push(checkbox.value);
+        });
+
+        if (selectedPrograms.length === 0) {
+            alert("Please select at least one program to download.");
+            return;
+        }
+
+        checkDevice();
+
+        selectedPrograms.forEach((program) => {
+            let downloadLink = '';
+
+            switch (program) {
+                case 'PS3HEN':
+                    downloadLink = 'https://ps3xploit.me/firmware/hfw/HFW_4.91.1_PS3UPDAT.PUP';
+                    break;
+                case 'EvilNatCFW':
+                    downloadLink = 'https://example.com/download/EvilNatCFW.pkg';
+                    break;
+                case 'RebugCFW':
+                    downloadLink = 'https://archive.midnightchannel.net/SonyPS/Firmware/download/a2c79919cafdbb50ccb5ee9589245380/REBUG_CRC%5B446FBCAE%5D_FW%5Bv4.86.1_LE%5D_PS3UPDAT.PUP';
+                    break;
+				case 'HabibCFW':
+                    downloadLink = 'https://archive.midnightchannel.net/SonyPS/Firmware/download/20f0fe916642cedc0de4b588d5b749ca/HABIB_COBRA_v4_4.75_CFW.zip';
+                    break;	
+				case 'FerroxCFW':
+                    downloadLink = 'https://archive.midnightchannel.net/SonyPS/Firmware/download/e7f40b5d0c4e604c58d9918c355796f1/FERROX_CRC%5B6003C4FA%5D_FW%5Bv4.87_-_FERROX_COBRA_%5B1.00%5D%5D_PS3UPDAT.PUP';
+                    break;
+                case 'WebmanMOD':
+                    downloadLink = 'https://store.brewology.com/get/homebrew.php?id=310&fid=2426';
+                    break;
+                case 'MultiMAN':
+                    downloadLink = 'https://store.brewology.com/get/homebrew.php?id=24&fid=2412';
+                    break;
+                case 'IRISMAN':
+                    downloadLink = 'https://store.brewology.com/get/homebrew.php?id=250&fid=2409';
+                    break;
+                case 'SENEnabler':
+                    downloadLink = 'https://store.brewology.com/get/homebrew.php?id=465&fid=2779';
+                    break;
+                case 'PSNPatch':
+                    downloadLink = 'https://store.brewology.com/get/homebrew.php?id=800&fid=3074';
+                    break;
+                case 'ManaGunZ':
+                    downloadLink = 'https://store.brewology.com/get/homebrew.php?id=2100&fid=3768';
+                    break;
+                case 'PS3UnlockHDD':
+                    downloadLink = 'https://ps3homebrew.com/ps3-unlock-hdd';
+                    break;
+                case 'reActPSN':
+                    downloadLink = 'https://store.brewology.com/get/homebrew.php?id=65&fid=2928';
+                    break;
+                case 'SNES9x':
+                    downloadLink = 'https://store.brewology.com/get/homebrew.php?id=2&fid=140';
+                    break;
+                case 'FCEUX':
+                    downloadLink = 'https://ps3.brewology.com/downloads/get.php?id=12480';
+                    break;
+                case 'GenesisPlus':
+                    downloadLink = 'https://www.brewology.com/downloads/get.php?id=12472';
+                    break;
+                case 'ScummVM':
+                    downloadLink = 'https://store.brewology.com/get/homebrew.php?id=82&fid=2397';
+                    break;
+                case 'RetroArch':
+                    downloadLink = 'https://github.com/crystalct/RetroArch_PSX_CE/releases/download/v0.4-beta/RetroArch_Psx-Place_Community_Edition_beta04-20220207.pkg';
+                    break;
+                case 'PSP RL':
+                    downloadLink = 'https://store.brewology.com/get/homebrew.php?id=310&fid=2186';
+                    break;
+                case 'HabibToolbox':
+                    downloadLink = 'https://store.brewology.com/get/homebrew.php?id=276&fid=1653';
+                    break;
+		case 'HANToolbox':
+                    downloadLink = 'https://store.brewology.com/get/homebrew.php?id=314&fid=2148';
+                    break;
+		case 'HENToolbox':
+                    downloadLink = 'https://store.brewology.com/get/homebrew.php?id=318&fid=2327';
+                    break;
+		case 'RebugToolbox':
+                    downloadLink = 'https://store.brewology.com/get/homebrew.php?id=308&fid=2336';
+                    break;
+		case 'UltimateToolbox':
+                    downloadLink = 'https://github.com/aldostools/Resources/releases/download/XMB_Randomizers/Ultimate_Toolbox_for_4.89-4.91_BETA.pkg';
+                    break;	
+                default:
+                    break;
+                case 'SENEnabler':
+                    downloadLink = 'https://store.brewology.com/get/homebrew.php?id=465&fid=2779';
+                    break;
+				case 'PKGi':
+                    downloadLink = 'https://store.brewology.com/get/homebrew.php?id=320&fid=2349';
+                    break;
+                case 'HENBrewStore':
+                    downloadLink = 'https://store.brewology.com/get/homebrew.php?id=317&fid=2202';
+                    break;
+				case 'MHUFreeStore':
+                    downloadLink = 'https://store.brewology.com/get/homebrew.php?id=57&fid=57';
+                    break;
+				case 'XMBPD':
+                    downloadLink = 'https://store.brewology.com/get/homebrew.php?id=295&fid=2088';
+                    break;
+            }
+
+            if (downloadLink) {
+                window.location.href = downloadLink;
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
