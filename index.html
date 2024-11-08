@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CogWheel - PS3 Edition</title>
+    <title>CogWheel - Online</title>
     <script>
         function checkDevice() {
             // Placeholder for device check logic
@@ -125,7 +125,8 @@
                 }
 
                 if (downloadLink) {
-                    window.location.href = downloadLink;
+                    // Open the download in a new tab for the PS3 browser
+                    window.open(downloadLink, '_blank');
                 }
             });
         }
@@ -176,17 +177,31 @@
             </div>
         </div>
 
-        <!-- Tools Section -->
+        <!-- Toolbox Section -->
         <div class="category">
-            <h2>Tools</h2>
+            <h2>Toolboxes</h2>
             <div class="checkbox-group">
-                <label><input type="checkbox" name="program" value="HabibToolbox">Habib Toolbox</label>
+                <label><input type="checkbox" name="program" value="HabibToolbox">Habib's Toolbox</label>
                 <label><input type="checkbox" name="program" value="HANToolbox">HAN Toolbox</label>
                 <label><input type="checkbox" name="program" value="HENToolbox">HEN Toolbox</label>
                 <label><input type="checkbox" name="program" value="RebugToolbox">Rebug Toolbox</label>
                 <label><input type="checkbox" name="program" value="UltimateToolbox">Ultimate Toolbox</label>
+            </div>
+        </div>
+
+        <!-- Flasher Section -->
+        <div class="category">
+            <h2>CFW Flashers</h2>
+            <div class="checkbox-group">
                 <label><input type="checkbox" name="program" value="CFWFlasherAlternate">CFW Flasher - Alternate</label>
                 <label><input type="checkbox" name="program" value="CFWFlasherMain">CFW Flasher - Main</label>
+            </div>
+        </div>
+
+        <!-- PS3 Store Section -->
+        <div class="category">
+            <h2>PS3 Store</h2>
+            <div class="checkbox-group">
                 <label><input type="checkbox" name="program" value="PKGi">PKGi</label>
                 <label><input type="checkbox" name="program" value="HENBrewStore">HENBrew Store</label>
                 <label><input type="checkbox" name="program" value="MHUFreeStore">MHU Free Store</label>
@@ -196,5 +211,8 @@
     </div>
 
     <button onclick="downloadSelected()">Download Selected Programs</button>
+
 </body>
 </html>
+
+
