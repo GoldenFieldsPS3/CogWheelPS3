@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS3 Homebrew & Games Installer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto;
+            width: 200px; /* Adjust size of the logo */
+            height: auto;
+        }
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .category {
+            width: 30%;
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .category h2 {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .checkbox-group label {
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+        .download-button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .download-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Logo -->
+    <img src="" alt="" class="logo">
+    
+    <h1>CogWheel - PS3 Version</h1>
+    <p>Select the homebrew apps, jailbreaks you want to install:</p>
+
+    <div class="categories">
+        <!-- Jailbreaks Section -->
+        <div class="category">
+            <h2>Jailbreaks</h2>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="program" value="PS3HEN">PS3HEN</label>
+                <label><input type="checkbox" name="program" value="EvilNatCFW">EvilNat CFW</label>
+            </div>
+        </div>
+
+        <!-- PS3 Homebrew Section -->
+        <div class="category">
+            <h2>PS3 Homebrew</h2>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="program" value="WebmanMOD">WebMAN MOD</label>
+                <label><input type="checkbox" name="program" value="MultiMAN">MultiMAN</label>
+                <label><input type="checkbox" name="program" value="IRISMAN">IRISMAN</label>
+            </div>
+        </div>
+
+        <!-- Emulators Section -->
+        <div class="category">
+            <h2>Emulators</h2>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="program" value="SNES9x">SNES9x</label>
+                <label><input type="checkbox" name="program" value="FCEUX">FCEUX</label>
+                <label><input type="checkbox" name="program" value="GenesisPlus">GenesisPlus</label>
+                <label><input type="checkbox" name="program" value="PCSX ReARMed">PCSX ReARMed</label>
+                <label><input type="checkbox" name="program" value="PPSSPP">PPSSPP</label>
+                <label><input type="checkbox" name="program" value="RetroArch">RetroArch</label>
+            </div>
+        </div>
+		    <div class="category">
+            <h2>Jailbreaks</h2>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="program" value="CFWFlasherAlternate" onclick="redirectToPage('http://aldostools.github.io/flashwriter')">CFW Flasher - Alternate</label>
+                <label><input type="checkbox" name="program" value="CFWFlasherMain" onclick="redirectToPage('https://www.ps3toolset.com/bgtoolset/')">CFW Flasher - Main</label>
+
+            </div>
+    </div>
+          
+    <button class="download-button" onclick="downloadSelected()">Download Selected</button>
+</div>
+
+<script>
+    // Function to check if user is on PS3 or not
+    function checkDevice() {
+        var isPS3 = /PlayStation 3/i.test(navigator.userAgent); // Check for PS3 in the user agent
+
+        if (isPS3) {
+            // Show message for USB storage on PS3
+            alert("You need any type of USB Storage formatted to FAT32 to download these files. Insert it right now.");
+        } else {
+            // Show alert if not on a PS3
+            alert("You are not on a PlayStation System! All features have been disabled.");
+        }
+    }
+
+    // Function to handle the download action
+    function downloadSelected() {
+        const selectedPrograms = [];
+        document.querySelectorAll('input[name="program"]:checked').forEach((checkbox) => {
+            selectedPrograms.push(checkbox.value);
+        });
+
+        if (selectedPrograms.length === 0) {
+            alert("Please select at least one program to download.");
+            return;
+        }
+
+        // Check the device and show the appropriate message
+        checkDevice();
+
+        // Simulate downloading files by showing alerts for each selected program
+        selectedPrograms.forEach((program) => {
+            let downloadLink = '';
+
+            // Assign download links based on the selected program
+            switch (program) {
+                case 'PS3HEN':
+                    downloadLink = 'https://example.com/download/PS3HEN.pkg';
+                    break;
+                case 'EvilNatCFW':
+                    downloadLink = 'https://example.com/download/EvilNatCFW.pkg';
+                    break;
+                case 'WebmanMOD':
+                    downloadLink = 'https://example.com/download/WebmanMOD.pkg';
+                    break;
+                case 'MultiMAN':
+                    downloadLink = 'https://example.com/download/MultiMAN.pkg';
+                    break;
+                case 'IRISMAN':
+                    downloadLink = 'https://example.com/download/IRISMAN.pkg';
+                    break;
+                case 'SNES9x':
+                    downloadLink = 'https://example.com/download/SNES9x.pkg';
+                    break;
+                case 'FCEUX':
+                    downloadLink = 'https://example.com/download/FCEUX.pkg';
+                    break;
+                case 'GenesisPlus':
+                    downloadLink = 'https://example.com/download/GenesisPlus.pkg';
+                    break;
+                case 'PCSX ReARMed':
+                    downloadLink = 'https://example.com/download/PCSXReARMed.pkg';
+                    break;
+                case 'PPSSPP':
+                    downloadLink = 'https://example.com/download/PPSSPP.pkg';
+                    break;
+                case 'RetroArch':
+                    downloadLink = 'https://example.com/download/RetroArch.pkg';
+                    break;
+                default:
+                    break;
+            }
+
+            // Trigger download if the link exists
+            if (downloadLink) {
+                const a = document.createElement('a');
+                a.href = downloadLink;
+                a.download = program + '.pkg';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
